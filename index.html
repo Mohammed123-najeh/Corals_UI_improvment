@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <title>Document</title>
+<style>
+  .line-animate {
+    transition: all 0.7s ease-out;
+  }
+
+  .line-animate.active.h-16 {
+    height: 4rem;
+  }
+
+  .line-animate.active.h-12 {
+    height: 3rem;
+  }
+
+  .line-animate.active.w-[300px] {
+    width: 300px;
+  }
+
+  .line-animate.active.w-[400px] {
+    width: 400px;
+  }
+</style>
+
+ <style>
+
+
+
+    @keyframes updown {
+      0%, 100% {
+        transform: translateY(0) skewY(5deg);
+      }
+      50% {
+        transform: translateY(-20px) skewY(10deg);
+      }
+    }
+    .animate-updown {
+      animation: updown 4s ease-in-out infinite;
+    }
+
+
+    @keyframes updownV2 {
+      0%, 100% {
+        transform: translateY(10) skewY(1deg);
+      }
+      50% {
+        transform: translateY(-5px) skewY(2deg);
+      }
+    }
+    .animate-updownV2 {
+      animation: updownV2 4s ease-in-out infinite;
+    }
+
+
+
+
+
+        @layer utilities {
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
+      @keyframes blink {
+        0%, 100% {
+          border-color: transparent;
+        }
+        50% {
+          border-color: rgb(6, 147, 255);
+        }
+      }
+
+      .animate-typing {
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 2px solid rgb(188, 12, 12);
+        width: 0;
+        animation: typing 3s steps(60, end) forwards, blink 0.7s step-end infinite;
+      }
+    }
+  
+
+
+  @layer utilities {
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in {
+      animation: fade-in 7s ease-out forwards;
+    }
+  }
+
+
+
+    @layer utilities {
+    @keyframes tree-fade {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-tree-fade {
+      animation: tree-fade 1.6s ease-out both;
+    }
+  }
+  </style>
+
+
+
+</head>
+<body>
+ 
+  <!-- Navbar -->
+<div id="navbar"   class=" transition-colors duration-1000
+ sticky top-0 z-50 flex items-center justify-around h-14 bg-gradient-to-r from-black to-blue-800">
+
+  <!-- Logo -->
+  <div>
+    <img class="h-10 w-48 h-12" src="./images/logo-removebg-preview.png" alt="company logo">
+  </div>
+
+
+  <!-- Navigation links -->
+  <ul class="flex space-x-4 text-white font-semibold  ">
+   <li>
+    <a href="#"
+       class="bg-blue-600 px-3 py-1 rounded transition delay-150 duration-300 ease-in-out hover:-translate-y-4 hover:scale-110 hover:rounded-full ...">
+      Home
+    </a>
+  </li>
+     <li>
+    <a href="#"
+       class="bg-blue-600 px-3 py-1 rounded transition delay-1000 duration-1000 ease-in-out hover:-translate-y-1 hover:scale-150 hover:rounded-full ...inline-block">
+      About us
+    </a>
+  </li>
+
+       <li>
+    <a href="#"
+       class="bg-blue-600 px-3 py-1 rounded transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:rounded-full ...inline-block">
+      Technologies +
+    </a>
+  </li>
+      <li>
+    <a href="#"
+       class="bg-blue-600 px-3 py-1 rounded transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:rounded-full ...inline-block">
+      Team
+    </a>
+  </li>
+  </ul>
+
+ 
+  <div class="text-xl  text-white space-x-6 h-7  bg-linear-to-t from-sky-500 to-indigo-500 rounded-full ">
+    <i class="fa-regular fa-user   transition delay-100 duration-300 ease-in-out hover:-translate-y-1  hover:scale-110 ..."></i>
+      <i class="fa-solid fa-magnifying-glass    transition delay-100 duration-300 ease-in-out hover:-translate-y-1  hover:scale-110 ..."></i>
+    <i class="fa-regular fa-moon   transition delay-100 duration-300 ease-in-out hover:-translate-y-1  hover:scale-110 ..."  ></i>
+  </div>
+
+
+</div>
+<div  class="flex items-center justify-center h-96 bg-black text-white">
+ <section class="flex flex-col items-center space-y-4">
+
+    <h1 class="text-4xl font-mono font-bold animate-typing">
+      Welcome To Corlas.io Company — One of the Best in the Middle East
+    </h1>
+
+    <div class="overflow-hidden w-[384px]">
+      <div class="animate-typing-img">
+        <img src="./images/logo-removebg-preview.png" alt="Corlas Logo" class="w-96" />
+      </div>
+    </div>
+  </section>
+</div>
+
+ <section class="relative h-screen flex items-center justify-center bg-black overflow-hidden">
+
+
+
+  <img src="./images/waves.jpg" alt="Background" class="absolute inset-0 w-full h-full object-cover opacity-30 animate-updown " />
+
+  <a href="https://saskiai.com/home"><img
+    id="zoomImg"
+    src="./images/new_hero.png"
+    alt="Zoom Image"
+    class="w-full h-96 transition-transform duration-1000 ease-in-out  rounded-3xl"
+  />
+  </a>
+</section>
+
+<!-- Body Section -->
+<section
+  id="appear"
+  class="min-h-96 py-20 px-6 flex flex-col items-center justify-center bg-black text-white transition-opacity opacity-0 translate-y-10 duration-500"
+>
+  
+  <h1 class="text-4xl font-bold">About us</h1>
+  <div class="w-32 h-1 bg-sky-500 mt-2 rounded-full"></div>
+
+  
+  <div class="mt-12 max-w-4xl text-center animate-fade-in text-2xl font-mono leading-relaxed ">
+    <p>
+      At Corlas.io, we craft powerful and modern web applications that help businesses grow in the digital age. 
+      With over 10 years of experience, our team specializes in building robust backends using Laravel, 
+      paired with dynamic and intuitive frontends using Vue.js, React, and other cutting-edge frameworks.
+    </p>
+    <br />
+    <p>
+      What sets us apart is our forward-thinking approach — integrating AI-powered tools 
+      to deliver smarter, faster, and more engaging websites.
+    </p>
+    <br />
+    <p>
+      <strong>Innovation, reliability, and performance</strong> — that's the Corlas.io promise.
+    </p>
+  </div>
+</section>
+
+<!---Technologies section-->
+
+<section id="teams-section" class="min-h-screen bg-black text-white flex flex-col items-center justify-center px-4 py-36">
+
+  <h2 class="text-5xl font-bold mb-4">Teams</h2>
+  <div class="w-28 h-1 bg-sky-500 rounded-full mb-16"></div>
+
+
+  <div class="flex flex-col items-center space-y-16 relative">
+
+   
+    <div class="relative flex flex-col items-center">
+      <img src="./images/marwan_ceo.png" alt="CEO" class="w-32 rounded-full z-10" />
+      <p class="mt-4 text-xl font-semibold text-center">Marwan Khanfar<br /><span class="text-sm text-gray-300">Founder & CEO</span></p>
+  
+      <div class="line-animate h-0 w-1 bg-blue-500 absolute top-full left-1/2 transform -translate-x-1/2 transition-all duration-700"></div>
+    </div>
+
+   
+    <div class="relative w-[800px] h-32 flex justify-between items-start mx-auto">
+      
+      <div class="line-animate absolute top-0 left-1/2 w-0 h-1 bg-white transform -translate-x-1/2 transition-all duration-700"></div>
+
+   
+      <div class="flex flex-col items-center relative z-10">
+       
+        <div class="line-animate w-1 h-0 bg-blue-500 mb-2 transition-all duration-700"></div>
+        <img src="./images/saeed.png" alt="Manager 1" class="w-28 rounded-full" />
+        <p class="mt-3 text-lg font-medium text-center">Saeed Matar<br /><span class="text-sm text-gray-400">Dirctor of Techology</span></p>
+      </div>
+
+   
+      <div class="flex flex-col items-center relative z-10">
+       
+        <div class="line-animate w-1 h-0 bg-blue-500 mb-2 transition-all duration-700"></div>
+        <img src="./images/ahamad.png" alt="Manager 2" class="w-28 rounded-full" />
+        <p class="mt-3 text-lg font-medium text-center">Ahmad Thyab<br /><span class="text-sm text-gray-400">Senior FullStack & AI</span></p>
+      </div>
+    </div>
+
+   
+    <div class="relative w-[600px] h-32 flex justify-between items-start">
+    
+      <div class="line-animate absolute top-0 left-1/2 w-0 h-1 bg-white transform -translate-x-1/2 transition-all duration-700"></div>
+
+ 
+      <div class="flex flex-col items-center z-10">
+        <div class="line-animate w-1 h-0 bg-blue-500 mb-2 transition-all duration-700"></div>
+        <img src="./images/Enas.png" alt="Team 1" class="w-24 rounded-full" />
+        <p class="mt-2 text-base text-center">Enas Asmar<br /><span class="text-sm text-gray-400">FullStack Developer</span></p>
+      </div>
+
+    
+      <div class="flex flex-col items-center z-10">
+        <div class="line-animate w-1 h-0 bg-blue-500 mb-2 transition-all duration-700"></div>
+        <img src="./images/Adam.png" alt="Team 2" class="w-24 rounded-full" />
+        <p class="mt-2 text-base text-center">Adam Saleem<br /><span class="text-sm text-gray-400">Senior Wordpress </span></p>
+      </div>
+
+     
+      <div class="flex flex-col items-center z-10">
+        <div class="line-animate w-1 h-0 bg-blue-500 mb-2 transition-all duration-700"></div>
+        <img src="./images/moayed.png" alt="Team 3" class="w-24 rounded-full" />
+        <p class="mt-2 text-base text-center">Moayyad Saleem<br /><span class="text-sm text-gray-400">Magento Specialist</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="min-h-96 bg-gradient-to-r from-blue-400 via-purple-500 to-red-400 px-4 py-6">
+
+
+  <h2 class="text-white text-3xl font-bold mb-6 text-center -mb-20  ">Technologies</h2>
+  <div class="flex justify-center ">
+      <h1 class="w-40 h-1 bg-black mt-2 rounded-full  "></h1>
+  </div>
+
+
+ 
+  <div class="flex justify-between mx-80 align mt-40 animate-updownV2 shadow-2xl ">
+    <div  class="bg-white px-4 py-2  shadow rounded-3xl "><img  class="w-36 transition-transform duration-500 hover:-translate-y-10 " src="./images/Laravel.svg.png"  alt="">
+     <p class="mt-2 font-medium text-center  text-xl bg-red-500 rounded-3xl ">Laravel</p>
+    </div>
+ <div  class="bg-white px-4 py-2  shadow rounded-3xl "><img  class="w-36 transition-transform duration-500 hover:-translate-y-10   " src="./images/vue.js"  alt="">
+     <p class="mt-2 font-medium text-center  text-xl bg-linear-to-r from-green-400 to-blue-950 rounded-3xl ">Vue.js</p>
+</div>
+ <div  class="bg-white px-4 py-2  shadow rounded-3xl "><img  class= "w-36 transition-transform duration-500 hover:-translate-y-10 " src="./images/React-icon.svg.png"  alt="">
+  <p class="mt-2 font-medium text-center  text-xl bg-linear-to-r from-blue-800 to-blue-400 rounded-3xl ">React.js</p>
+</div>
+ 
+  </div>
+  
+
+  <div class="flex justify-between mx-40   align mt-40 animate-updownV2 shadow-2xl ">
+    <div  class="bg-white px-4 py-2  shadow rounded-3xl "><img  class=" h-28 w-40 transition-transform duration-500 hover:-translate-y-10 " src="./images/mysql-new.png"  alt="">
+     <p class="mt-2 font-medium text-center  text-xl bg-linear-to-r from-orange-500 to-blue-400 rounded-3xl ">Mysql</p></div>
+ <div  class="bg-white px-4 py-2  shadow rounded-3xl "><img  class=" transition-transform duration-500 hover:-translate-y-10  w-36 " src="./images/WordPress-logotype-wmark.png"  alt="">
+ <p class="mt-2 font-medium text-center  text-xl bg-linear-to-r from-gray-600 to-gray-800 rounded-3xl ">Wordpress</p>
+</div>
+ <div  class="bg-white px-4 py-2  shadow rounded-3xl "><img  class= " w-36 transition-transform duration-500 hover:-translate-y-10 " src="./images/nodejs-image.webp"  alt="">
+
+
+ <p class="mt-2 font-medium text-center  text-xl bg-linear-to-r from-gray-700 to-green-600 rounded-3xl ">Node.js</p></div>
+ 
+  </div>
+
+<!--------Footer---->
+
+<div class="w-full flex justify-center mt-24 bg-black rounded-full ">
+     <img src="./images/logo-removebg-preview.png" alt="">                         
+</div>
+
+
+<div class="w-full mt-14 flex justify-around font-serif  ">
+
+<ul class="bg-white rounded-3xl  p-9 space-y-3  transition-transform duration-500 hover:-translate-y-10">
+<h4 class="mb-6 underline text-blue-400 text-lg">Contact us:</h4>
+<li>+970 561357962</li>
+<li>+971 059485213</li>
+<li>+970 114820055</li>
+
+
+</ul>
+
+<ul class="bg-white rounded-3xl  p-9 space-y-3   transition-transform duration-500 hover:-translate-y-10">
+<h4 class="mb-6 underline text-blue-400 text-lg">Services:</h4>
+<li>Website Design & Development</li>
+<li>
+E-Commerce Solutions</li>
+<li>SEO & Digital Marketing</li>
+<li>Web Hosting & Maintenance
+</li>
+
+<li>UI/UX Design
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+<ul class="bg-white rounded-3xl  p-9 space-y-3 text-center text-lg  transition-transform duration-500 hover:-translate-y-10">
+<h4 class="mb-6 underline text-blue-400 text-lg ">Follow us on:</h4>
+<li><i class="fa-brands fa-facebook"></i></li>
+<li><i class="fa-brands fa-instagram"></i></li>
+<li><i class="fa-brands fa-whatsapp"></i></li>
+
+</ul>
+
+
+
+
+
+
+</div>
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+</div>
+
+
+
+<script src="./animation.js"></script>
+</body>
+</html>
